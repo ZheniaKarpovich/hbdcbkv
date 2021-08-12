@@ -9,6 +9,7 @@ let config = {
     type: Phaser.AUTO,
     width: width,
     height: height,
+    backgroundColor: "#ffffff",
     physics: {
         default: 'arcade',
         arcade: {
@@ -42,7 +43,7 @@ let livesImage=[];
 let tiles = "pacman-tiles";
 let spritesheet = 'pacman-spritesheet';
 let spritesheetPath = 'assets/images/pacmansprites.png';
-let tilesPath = 'assets/images/background.png';
+let tilesPath = 'assets/images/background1.png';
 let mapPath = 'assets/levels/codepen-level.json';
 let Animation= {
     Player : {
@@ -76,14 +77,16 @@ let Animation= {
 function preload ()
 {
     this.load.spritesheet(spritesheet, spritesheetPath, { frameWidth: gridSize, frameHeight: gridSize });
+    this.load.spritesheet('policeman', 'assets/images/Officer_sheet.png', { frameWidth: gridSize, frameHeight: gridSize });
+    this.load.spritesheet('rescuevehicles', 'assets/images/rescuevehicles.png', { frameWidth: gridSize, frameHeight: gridSize });
     this.load.tilemapTiledJSON("map", mapPath);
     this.load.image(tiles, tilesPath);
-    this.load.image("pill", "assets/images/pac man pill/spr_pill_0.png");
+    this.load.image("pill", "assets/images/pac man pill/spr_pill_2.png");
     this.load.image("lifecounter", "assets/images/pac man life counter/spr_lifecounter_0.png");
 }
 
 function create ()
-{    
+{
     this.anims.create({
             key: Animation.Player.Eat,
             frames: this.anims.generateFrameNumbers(spritesheet, { start: 9, end: 13 }),
@@ -105,35 +108,35 @@ function create ()
 
     this.anims.create({
             key: Animation.Ghost.Blue.Move,
-            frames: this.anims.generateFrameNumbers(spritesheet, { start: 0, end: 1 }),
+            frames: this.anims.generateFrameNumbers('policeman', { start: 90, end: 96 }),
             frameRate: 10,
             repeat: -1
         });
 
     this.anims.create({
             key: Animation.Ghost.Orange.Move,
-            frames: this.anims.generateFrameNumbers(spritesheet, { start: 4, end: 5 }),
+            frames: this.anims.generateFrameNumbers('policeman', { start: 90, end: 96 }),
             frameRate: 10,
             repeat: -1
         });
 
     this.anims.create({
             key: Animation.Ghost.White.Move,
-            frames: this.anims.generateFrameNumbers(spritesheet, { start: 4, end: 5 }),
+            frames: this.anims.generateFrameNumbers('policeman', { start: 90, end: 96 }),
             frameRate: 10,
             repeat: -1
         });
 
     this.anims.create({
             key: Animation.Ghost.Pink.Move,
-            frames: this.anims.generateFrameNumbers(spritesheet, { start: 14, end: 15 }),
+            frames: this.anims.generateFrameNumbers('policeman', { start: 90, end: 96 }),
             frameRate: 10,
             repeat: -1
         });
 
     this.anims.create({
             key: Animation.Ghost.Red.Move,
-            frames: this.anims.generateFrameNumbers(spritesheet, { start: 16, end: 17 }),
+            frames: this.anims.generateFrameNumbers('policeman', { start: 90, end: 96 }),
             frameRate: 10,
             repeat: -1
         });
@@ -209,8 +212,8 @@ function create ()
 
     graphics = this.add.graphics();
 
-    scoreText =  this.add.text(25, 595, 'Score: '+player.score).setFontFamily('Arial').setFontSize(18).setColor('#ffffff');
-    this.add.text(630, 595, 'Lives:').setFontFamily('Arial').setFontSize(18).setColor('#ffffff');
+    scoreText =  this.add.text(25, 595, 'Score: '+player.score).setFontFamily('Arial').setFontSize(18).setColor('#000000');
+    this.add.text(630, 595, 'Lives:').setFontFamily('Arial').setFontSize(18).setColor('#000000');
     for (let i =  0; i < player.life; i++) {
         livesImage.push(this.add.image(700 + (i * 25), 605, 'lifecounter'));
     }
