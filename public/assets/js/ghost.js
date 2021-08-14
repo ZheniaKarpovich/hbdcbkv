@@ -2,11 +2,11 @@ export default class Ghost {
     constructor(scene, position, anim)
     {       
         this.sprite=scene.physics.add.sprite(position.x, position.y, 'ghost')
-            .setScale(0.8)
+            .setScale(0.83)
             .setOrigin(0.5);
         this.spawnPoint=position;
         this.anim=anim;      
-        this.speed = 150;
+        this.speed = 90;
         this.moveTo = new Phaser.Geom.Point();
         this.safetile = [-1, 19];
         this.directions = [];

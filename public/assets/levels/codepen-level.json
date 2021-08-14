@@ -2225,6 +2225,18 @@
            "width":32,
            "x":448,
            "y":352
+          },
+          {
+           "gid":18,
+           "height":32,
+           "id":914,
+           "name":"Cherry",
+           "rotation":0,
+           "type":"",
+           "visible":false,
+           "width":32,
+           "x":384,
+           "y":256
           }
          ],
          "opacity":1,

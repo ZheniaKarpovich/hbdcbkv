@@ -82,6 +82,7 @@ function preload ()
     this.load.tilemapTiledJSON("map", mapPath);
     this.load.image(tiles, tilesPath);
     this.load.image("pill", "assets/images/pac man pill/spr_pill_2.png");
+    this.load.image("cherry", "assets/images/pac man cherry/spr_cherry_0.png");
     this.load.image("lifecounter", "assets/images/pac man life counter/spr_lifecounter_0.png");
 }
 
@@ -173,6 +174,16 @@ function create ()
         }
     });
 
+
+    let cherryGroup = this.physics.add.group();
+    map.filterObjects("Objects", function (value, index, array) {
+        if(value.name == "Cherry") {
+            let pill=scene.physics.add
+                .sprite(value.x + offset, value.y - offset, "cherry");
+            pill.visible = false;
+            cherryGroup.add(pill);
+        }
+    });
     
     let ghostsGroup = this.physics.add.group();
     let i=0;
@@ -194,9 +205,16 @@ function create ()
         pill.disableBody(true, true);
         pillsAte++;
         player.score+=10;
+
         if(pillsCount==pillsAte) {
-            reset();
+            for (let cherry of cherryGroup.getChildren()) {
+                cherry.visible = true;
+            }
         }
+    }, null, this);
+
+    this.physics.add.overlap(player.sprite, cherryGroup, function(sprite, cherrySprite) {
+        window.location.href = "http://www.w3schools.com";
     }, null, this);
 
     this.physics.add.overlap(player.sprite, ghostsGroup, function(sprite, ghostSprite) {
