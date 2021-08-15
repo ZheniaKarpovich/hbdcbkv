@@ -52,7 +52,7 @@ html, body {
   transition: color 0.5s ease;
 }
 
-.prizeButton:active:hover:not([disabled]){
+.prizeButton:hover:not([disabled]){
   background-color: #000000;
   color: white;
 }
