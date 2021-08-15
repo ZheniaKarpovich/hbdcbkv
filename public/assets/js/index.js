@@ -214,6 +214,7 @@ function create ()
     }, null, this);
 
     this.physics.add.overlap(player.sprite, cherryGroup, function(sprite, cherrySprite) {
+        this.scene.pause();
         window.location.href = `http://${window.location.hostname}:${window.location.port}/result`;
     }, null, this);
 
