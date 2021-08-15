@@ -38,6 +38,7 @@ html, body {
 
 table {
     width: 100%;
+    border: none;
 }
 
 .col1 {
