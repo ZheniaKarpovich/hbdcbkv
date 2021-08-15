@@ -206,7 +206,7 @@ function create ()
         pillsAte++;
         player.score+=10;
 
-        if(pillsCount==pillsAte) {
+        if(1==pillsAte) {
             for (let cherry of cherryGroup.getChildren()) {
                 cherry.visible = true;
             }
@@ -214,7 +214,7 @@ function create ()
     }, null, this);
 
     this.physics.add.overlap(player.sprite, cherryGroup, function(sprite, cherrySprite) {
-        window.location.href = "http://www.w3schools.com";
+        window.location.href = `http://${window.location.hostname}:${window.location.port}/result`;
     }, null, this);
 
     this.physics.add.overlap(player.sprite, ghostsGroup, function(sprite, ghostSprite) {
