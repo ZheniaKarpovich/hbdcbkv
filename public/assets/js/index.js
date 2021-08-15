@@ -84,6 +84,7 @@ function preload ()
     this.load.image("pill", "assets/images/pac man pill/spr_pill_2.png");
     this.load.image("cherry", "assets/images/pac man cherry/spr_cherry_0.png");
     this.load.image("lifecounter", "assets/images/pac man life counter/spr_lifecounter_0.png");
+    this.load.audio("eatpill", ["assets/audio/eatpill.mp3"]);
 }
 
 function create ()
@@ -206,10 +207,13 @@ function create ()
         }
      });
 
+    const eatpill = this.sound.add("eatpill", { loop: false });
+
     this.physics.add.collider(player.sprite, layer1);
     this.physics.add.collider(player.sprite, layer2);
     this.physics.add.collider(ghostsGroup, layer1);
-    this.physics.add.overlap(player.sprite, pills, function(sprite, pill) {        
+    this.physics.add.overlap(player.sprite, pills, function(sprite, pill) {
+        eatpill.play();
         pill.disableBody(true, true);
         pillsAte++;
         player.score+=10;
@@ -226,17 +230,17 @@ function create ()
         window.location.href = `http://${window.location.hostname}:${window.location.port}/result`;
     }, null, this);
 
-    let speed = 110;
+    // let speed = 110;
 
     this.physics.add.overlap(player.sprite, ghostsGroup, function(sprite, ghostSprite) {
         if(player.active) {
             player.die();
             for(let ghost of ghosts) {
-                ghost.setSpeed(speed - 15)
+                // ghost.setSpeed(speed - 15)
                 ghost.freeze();
             }
 
-            speed -= 15;
+            // speed -= 15;
         }
     }, null, this);
 
