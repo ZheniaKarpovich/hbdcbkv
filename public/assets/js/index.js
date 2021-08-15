@@ -82,7 +82,7 @@ function preload ()
     this.load.tilemapTiledJSON("map", mapPath);
     this.load.image(tiles, tilesPath);
     this.load.image("pill", "assets/images/pac man pill/spr_pill_2.png");
-    this.load.image("cherry", "assets/images/pac man cherry/spr_cherry_0.png");
+    this.load.image("cherry", "assets/images/giftbox.png");
     this.load.image("lifecounter", "assets/images/pac man life counter/spr_lifecounter_0.png");
     this.load.audio("eatpill", ["assets/audio/eatpill.mp3"]);
 }
