@@ -36,6 +36,10 @@ export default class Player {
         this.sprite.anims.play(this.anim.Die, true);
     }
 
+    setSpeed (speed) {
+        this.speed = speed;
+    }
+
     animComplete (animation, frame)
     {        
         if(animation.key==this.anim.Die) {

@@ -187,7 +187,15 @@ function create ()
     
     let ghostsGroup = this.physics.add.group();
     let i=0;
-    let skins=[Animation.Ghost.Blue, Animation.Ghost.Red, Animation.Ghost.Orange , Animation.Ghost.Pink, Animation.Ghost.Pink, Animation.Ghost.Orange];
+    let skins=[
+        Animation.Ghost.Blue,
+        Animation.Ghost.Red,
+        Animation.Ghost.Orange,
+        Animation.Ghost.Pink,
+        Animation.Ghost.Pink,
+        Animation.Ghost.Orange,
+        Animation.Ghost.Orange,
+    ];
      map.filterObjects("Objects", function (value, index, array) {        
         if(value.name == "Ghost") {
             let position = new Phaser.Geom.Point(value.x + offset, value.y - offset);
@@ -218,12 +226,17 @@ function create ()
         window.location.href = `http://${window.location.hostname}:${window.location.port}/result`;
     }, null, this);
 
+    let speed = 110;
+
     this.physics.add.overlap(player.sprite, ghostsGroup, function(sprite, ghostSprite) {
         if(player.active) {
             player.die();
             for(let ghost of ghosts) {
+                ghost.setSpeed(speed - 15)
                 ghost.freeze();
-            }   
+            }
+
+            speed -= 15;
         }
     }, null, this);
 

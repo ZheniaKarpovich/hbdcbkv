@@ -6,7 +6,7 @@ export default class Ghost {
             .setOrigin(0.5);
         this.spawnPoint=position;
         this.anim=anim;      
-        this.speed = 90;
+        this.speed = 120;
         this.moveTo = new Phaser.Geom.Point();
         this.safetile = [-1, 19];
         this.directions = [];
@@ -20,7 +20,10 @@ export default class Ghost {
         this.turnCount=0;
         this.turnAtTime=[4, 8, 16, 32, 64];
         this.turnAt=this.rnd.pick(this.turnAtTime);
-        
+    }
+
+    setSpeed (speed) {
+        this.speed = speed;
     }
 
     freeze() {
