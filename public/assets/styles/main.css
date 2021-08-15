@@ -29,6 +29,7 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
   transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .button:hover {
@@ -38,6 +39,7 @@ html, body {
 
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 table, tr, td {
@@ -51,5 +53,4 @@ table, tr, td {
 img {
 width: 150px;
 height: 100%;
-display: block;
 }
