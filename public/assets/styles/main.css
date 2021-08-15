@@ -38,7 +38,14 @@ html, body {
 
 table {
     width: 100%;
-   }
-   .col1 {
+}
+
+.col1 {
     width: 100px;
-   }
+}
+
+.img {
+width: 100px;
+height: 100px;
+align: center;
+}
