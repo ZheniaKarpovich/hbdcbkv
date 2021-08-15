@@ -18,5 +18,9 @@ app.get('/result',function(req,res) {
     res.sendFile(path.join(__dirname+'/pages/result/index.html'));
 });
 
+app.get('/tutorial',function(req,res) {
+    res.sendFile(path.join(__dirname+'/pages/tutorial/tutorial.html'));
+});
+
 
 app.listen(process.env.PORT, () => console.log(`Server listening on port: ${process.env.PORT}`));
