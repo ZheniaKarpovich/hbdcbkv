@@ -35,3 +35,10 @@ html, body {
   background-color: #000000;
   color: white;
 }
+
+table {
+    width: 100%;
+   }
+   .col1 {
+    width: 100px;
+   }
