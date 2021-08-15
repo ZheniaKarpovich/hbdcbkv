@@ -52,7 +52,7 @@ html, body {
   transition: color 0.5s ease;
 }
 
-button[disabled]:hover {
+.prizeButton[disabled]:hover {
 }
 
 .prizeButton:hover{
