@@ -85,6 +85,9 @@ function preload ()
     this.load.image("cherry", "assets/images/giftbox.png");
     this.load.image("lifecounter", "assets/images/pac man life counter/spr_lifecounter_0.png");
     this.load.audio("eatpill", ["assets/audio/eatpill.mp3"]);
+    this.load.audio("eating", ["assets/audio/eating.mp3"]);
+    this.load.audio("die", ["assets/audio/die.mp3"]);
+    this.load.audio("intermission", ["assets/audio/intermission.mp3"]);
 }
 
 function create ()
@@ -151,7 +154,7 @@ function create ()
 
     layer2 = map.createStaticLayer("Layer 2", tileset, 0, 0);
     layer2.setCollisionByProperty({ collides: true});
-    
+
     let spawnPoint = map.findObject("Objects", obj => obj.name === "Player");  
     let position = new Phaser.Geom.Point(spawnPoint.x + offset, spawnPoint.y - offset);
     player = new Player(this, position, Animation.Player, function() {
@@ -162,6 +165,14 @@ function create ()
             respawn();
         }
     });
+
+
+    // const eating = this.sound.add("eating", { loop: false });
+    // player.on('player-eat', function () {
+    //     if(player.anims.currentAnim.key === 'player-eat') {
+    //         eating.play();
+    //     }
+    // });
 
     let scene = this;
 
@@ -174,6 +185,9 @@ function create ()
             pillsCount++;
         }
     });
+
+    const intermission = this.sound.add("intermission", { loop: true });
+    intermission.play();
 
 
     let cherryGroup = this.physics.add.group();
@@ -232,8 +246,11 @@ function create ()
 
     // let speed = 110;
 
+    const die = this.sound.add("die", { loop: false });
+
     this.physics.add.overlap(player.sprite, ghostsGroup, function(sprite, ghostSprite) {
         if(player.active) {
+            die.play();
             player.die();
             for(let ghost of ghosts) {
                 // ghost.setSpeed(speed - 15)
