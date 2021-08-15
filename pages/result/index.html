@@ -11,11 +11,11 @@
         Поздравляем!!!
     </div>
     <div>
-        <input type="checkbox" id="agreement" name="agreement">
+        <input type="checkbox" id="agreement" name="agreement" onchange="document.getElementById('prize').disabled = !this.checked;">
         <label for="agreement">Я обязуюсь преобрести новый телефон в течение 3 месяцев.</label>
     </div>
     <div>
-        <a href="" class="button">Забрать приз</a>
+        <a href="" class="button" id="prize">Забрать приз</a>
     </div>
 </body>
 </html>
