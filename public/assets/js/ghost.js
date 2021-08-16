@@ -6,7 +6,7 @@ export default class Ghost {
             .setOrigin(0.5);
         this.spawnPoint=position;
         this.anim=anim;      
-        this.speed = 120;
+        this.speed = 125;
         this.moveTo = new Phaser.Geom.Point();
         this.safetile = [-1, 19];
         this.directions = [];
