@@ -2261,18 +2261,6 @@
            "width":32,
            "x":448,
            "y":352
-          },
-          {
-           "gid":18,
-           "height":32,
-           "id":917,
-           "name":"Ghost",
-           "rotation":0,
-           "type":"",
-           "visible":true,
-           "width":32,
-           "x":448,
-           "y":352
           }
          ],
          "opacity":1,
