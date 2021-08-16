@@ -1,5 +1,5 @@
 html, body {
-    margin: 0px;
+    margin: 10px;
     height: 100%;
 }
 
@@ -12,9 +12,76 @@ html, body {
     align-items: center;
 }
 
+.result-container {
+    background-image: url('photo9.jpeg');
+    background-repeat: repeat;
+}
+
 .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-size: 64px;
+    font-family: 'Eczar', serif;
+}
+
+.title1 {
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 5px;
+    /*color: white;*/
+}
+
+.title2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 5px;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.text {
+    text-indent: 24px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.result-text {
+    text-indent: 24px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    /*color: white;*/
+}
+
+.subtitle {
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 5px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 
 .button {
@@ -30,6 +97,7 @@ html, body {
   cursor: pointer;
   transition: background-color 0.5s ease;
   transition: color 0.5s ease;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button:hover {

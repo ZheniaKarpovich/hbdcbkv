@@ -210,6 +210,7 @@ function create ()
         Animation.Ghost.Pink,
         Animation.Ghost.Orange,
         Animation.Ghost.Orange,
+        Animation.Ghost.Orange,
     ];
      map.filterObjects("Objects", function (value, index, array) {        
         if(value.name == "Ghost") {
@@ -232,7 +233,7 @@ function create ()
         pillsAte++;
         player.score+=10;
 
-        if(1==pillsAte) {
+        if(pillsCount === pillsAte) {
             for (let cherry of cherryGroup.getChildren()) {
                 cherry.visible = true;
             }

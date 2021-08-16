@@ -9,17 +9,18 @@
     <title>result</title>
 </head>
 <body>
-    <div>Дорогой Максим, компания RAKS & KRABS inc. поздравляет Вас с успешным побегом (из утробы 23 года назад).
-        В связи с этим замечательным событием мы предоставляем Вам наш подарок - новый телефон. (Хотелось бы так сказать,
-        но к сожалению у компании очень ограниченный бюджет, поэтому предоставляется скидка на покупку следующего телефона).
-        Поздравляем!!!
+    <div class="container result-container">
+        <div class="header">
+            <div class="result-text">Дорогой Максим, компания RAKS & KRABS inc. поздравляет Вас с успешным побегом (из утробы 23 года назад).
+                В связи с этим замечательным событием мы предоставляем Вам наш подарок - новый телефон. (Хотелось бы так сказать,
+                но к сожалению у компании очень ограниченный бюджет, поэтому предоставляется скидка на покупку следующего телефона). Поздравляем!!!
+            </div>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="agreement" name="agreement" onchange="document.getElementById('prize').href = this.checked ? '/assets/images/photos/certificate.jpg' : ''; if(this.checked) { document.getElementById('prize').download = 'certificate' } else { document.getElementById('prize').removeAttribute('download')}">
+            <label for="agreement">Я обязуюсь преобрести новый телефон в течение 3 месяцев.</label>
+        </div>
+        <a name="prize" class="button" id="prize" href="">Забрать приз</a>
     </div>
-    <div>
-        <input type="checkbox" id="agreement" name="agreement" onchange="document.getElementById('prize').disabled = !this.checked;">
-        <label for="agreement">Я обязуюсь преобрести новый телефон в течение 3 месяцев.</label>
-    </div>
-    <form action="">
-        <input type="submit" name="prize" class="prizeButton" id="prize" value="Забрать приз" disabled/>
-    </form>
 </body>
 </html>
