@@ -211,6 +211,7 @@ function create ()
         Animation.Ghost.Orange,
         Animation.Ghost.Orange,
         Animation.Ghost.Orange,
+        Animation.Ghost.Orange,
     ];
      map.filterObjects("Objects", function (value, index, array) {        
         if(value.name == "Ghost") {
